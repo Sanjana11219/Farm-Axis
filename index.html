@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmAxis — Intelligent Agriculture Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="logo-mark">⬡</span>
+        <span>FarmAxis</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">Platform</a></li>
+        <li><a href="#services">Solutions</a></li>
+        <li><a href="#cases">Results</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#contact" class="nav-ghost">Sign In</a>
+        <a href="#contact" class="nav-cta">Get Access <span class="arrow">→</span></a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">Platform</a>
+      <a href="#services">Solutions</a>
+      <a href="#cases">Results</a>
+      <a href="#contact">Get Access</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-badge reveal-up">
+      <span class="badge-dot"></span>
+      Now in Public Beta — Join 15,000+ Farmers
+    </div>
+    <h1 class="hero-title reveal-up">
+      Agriculture<br />
+      <em>Reimagined</em><br />
+      <span class="title-outline">by Intelligence</span>
+    </h1>
+    <p class="hero-sub reveal-up">
+      FarmAxis fuses satellite imagery, soil sensors, and predictive AI
+      to give every farm an unfair advantage over uncertainty.
+    </p>
+    <div class="hero-actions reveal-up">
+      <a href="#contact" class="btn-primary">
+        Start Free Trial
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#cases" class="btn-ghost">
+        <span class="play-icon">▶</span> Watch Demo
+      </a>
+    </div>
+    <div class="hero-proof reveal-up">
+      <div class="proof-avatars">
+        <div class="avatar" style="background:#6ee7b7"></div>
+        <div class="avatar" style="background:#86efac"></div>
+        <div class="avatar" style="background:#4ade80"></div>
+        <div class="avatar" style="background:#22c55e"></div>
+      </div>
+      <span>Trusted by <strong>15,000+</strong> farms across 40 countries</span>
+    </div>
+
+    <!-- FLOATING METRICS -->
+    <div class="hero-float float-1 reveal-up">
+      <div class="float-label">Yield Increase</div>
+      <div class="float-val">+38%</div>
+      <div class="float-bar"><div class="float-fill" style="width:78%"></div></div>
+    </div>
+    <div class="hero-float float-2 reveal-up">
+      <div class="float-label">Water Saved</div>
+      <div class="float-val">41%</div>
+      <div class="sparkline">
+        <svg viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="0,25 15,18 30,20 45,10 60,14 80,4" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="0,25 15,18 30,20 45,10 60,14 80,4 80,30 0,30" fill="rgba(34,197,94,0.1)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-float float-3 reveal-up">
+      <div class="float-icon">🌱</div>
+      <div class="float-text">
+        <strong>Harvest Alert</strong>
+        <span>Corn field ready in 6 days</span>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>AI Crop Intelligence</span><span class="dot">·</span>
+      <span>Predictive Yield Modeling</span><span class="dot">·</span>
+      <span>Smart Irrigation</span><span class="dot">·</span>
+      <span>Soil Health Analytics</span><span class="dot">·</span>
+      <span>Carbon Credits</span><span class="dot">·</span>
+      <span>Livestock Optimization</span><span class="dot">·</span>
+      <span>Satellite Monitoring</span><span class="dot">·</span>
+      <span>Weather Intelligence</span><span class="dot">·</span>
+      <span>AI Crop Intelligence</span><span class="dot">·</span>
+      <span>Predictive Yield Modeling</span><span class="dot">·</span>
+      <span>Smart Irrigation</span><span class="dot">·</span>
+      <span>Soil Health Analytics</span><span class="dot">·</span>
+      <span>Carbon Credits</span><span class="dot">·</span>
+      <span>Livestock Optimization</span><span class="dot">·</span>
+      <span>Satellite Monitoring</span><span class="dot">·</span>
+      <span>Weather Intelligence</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-label reveal-up">⬡ The Platform</div>
+      <div class="about-grid">
+        <div class="about-left reveal-up">
+          <h2 class="section-title">The operating system<br /><em>for modern farming</em></h2>
+        </div>
+        <div class="about-right reveal-up">
+          <p>FarmAxis is not a tool — it's an intelligence layer that sits on top of your entire farm operation. From planting decisions to harvest timing, every choice is backed by real data, real AI, and real outcomes.</p>
+          <p>We integrate with 200+ sensors, satellites, and legacy farm management software — so you don't have to replace anything, just upgrade it.</p>
+          <div class="about-stats">
+            <div class="astat">
+              <span class="astat-num">200+</span>
+              <span class="astat-label">Integrations</span>
+            </div>
+            <div class="astat">
+              <span class="astat-num">99.9%</span>
+              <span class="astat-label">Uptime SLA</span>
+            </div>
+            <div class="astat">
+              <span class="astat-num">&lt;2s</span>
+              <span class="astat-label">Alert Latency</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURE TABS -->
+      <div class="feature-tabs reveal-up">
+        <div class="tab-header">
+          <button class="tab-btn active" data-tab="0">Monitoring</button>
+          <button class="tab-btn" data-tab="1">Prediction</button>
+          <button class="tab-btn" data-tab="2">Automation</button>
+          <button class="tab-btn" data-tab="3">Analytics</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-panel active" data-panel="0">
+            <div class="tab-info">
+              <h3>Real-Time Field Monitoring</h3>
+              <p>Live satellite imagery combined with on-ground IoT sensors gives you a pixel-level view of every inch of your land — 24/7, regardless of cloud cover.</p>
+              <ul class="feature-list">
+                <li>✦ NDVI vegetation health mapping</li>
+                <li>✦ Thermal anomaly detection</li>
+                <li>✦ Pest & disease early warning</li>
+                <li>✦ Irrigation leak detection</li>
+              </ul>
+            </div>
+            <div class="tab-visual">
+              <div class="visual-card">
+                <div class="vc-header">
+                  <span class="vc-dot red"></span>
+                  <span class="vc-dot yellow"></span>
+                  <span class="vc-dot green"></span>
+                  <span class="vc-title">Field Health Map — Block 7A</span>
+                </div>
+                <div class="field-grid">
+                  <div class="fg-cell h-high"></div><div class="fg-cell h-high"></div><div class="fg-cell h-med"></div><div class="fg-cell h-high"></div>
+                  <div class="fg-cell h-med"></div><div class="fg-cell h-high"></div><div class="fg-cell h-high"></div><div class="fg-cell h-low"></div>
+                  <div class="fg-cell h-high"></div><div class="fg-cell h-low"></div><div class="fg-cell h-med"></div><div class="fg-cell h-high"></div>
+                  <div class="fg-cell h-high"></div><div class="fg-cell h-high"></div><div class="fg-cell h-med"></div><div class="fg-cell h-high"></div>
+                </div>
+                <div class="vc-legend">
+                  <span class="leg h-high">High</span>
+                  <span class="leg h-med">Medium</span>
+                  <span class="leg h-low">Low</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="1">
+            <div class="tab-info">
+              <h3>Predictive Yield Analytics</h3>
+              <p>Our models trained on 50M+ acres of historical data forecast your yield 90 days in advance with 94% accuracy — letting you plan, hedge, and maximize returns.</p>
+              <ul class="feature-list">
+                <li>✦ 90-day yield forecasting</li>
+                <li>✦ Market price correlation</li>
+                <li>✦ Risk-adjusted harvest windows</li>
+                <li>✦ Multi-crop scenario modeling</li>
+              </ul>
+            </div>
+            <div class="tab-visual">
+              <div class="visual-card">
+                <div class="vc-header">
+                  <span class="vc-dot red"></span><span class="vc-dot yellow"></span><span class="vc-dot green"></span>
+                  <span class="vc-title">Yield Forecast — Season 2026</span>
+                </div>
+                <div class="chart-wrap">
+                  <svg viewBox="0 0 260 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="forecast-chart">
+                    <defs>
+                      <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#22c55e" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M0,80 C30,70 50,50 80,45 C110,40 130,30 160,25 C190,20 210,30 260,15" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M0,80 C30,70 50,50 80,45 C110,40 130,30 160,25 C190,20 210,30 260,15 L260,100 L0,100Z" fill="url(#chartGrad)"/>
+                    <!-- Forecast dashed -->
+                    <path d="M160,25 C190,20 230,10 260,8" stroke="#86efac" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round"/>
+                    <circle cx="160" cy="25" r="4" fill="#22c55e"/>
+                    <text x="162" y="20" fill="#86efac" font-size="8" font-family="DM Mono">Forecast →</text>
+                  </svg>
+                  <div class="chart-meta">
+                    <span class="cm-item"><span class="cm-dot actual"></span> Actual</span>
+                    <span class="cm-item"><span class="cm-dot forecast"></span> Forecast</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="2">
+            <div class="tab-info">
+              <h3>Intelligent Automation</h3>
+              <p>Set thresholds, build workflows, and let FarmAxis act — from triggering irrigation to alerting your agronomist. Farming on autopilot, without losing control.</p>
+              <ul class="feature-list">
+                <li>✦ Rule-based irrigation triggers</li>
+                <li>✦ Automated pest response alerts</li>
+                <li>✦ Equipment scheduling AI</li>
+                <li>✦ Third-party API webhooks</li>
+              </ul>
+            </div>
+            <div class="tab-visual">
+              <div class="visual-card">
+                <div class="vc-header">
+                  <span class="vc-dot red"></span><span class="vc-dot yellow"></span><span class="vc-dot green"></span>
+                  <span class="vc-title">Automation Flows</span>
+                </div>
+                <div class="flow-list">
+                  <div class="flow-item active-flow">
+                    <span class="flow-icon">💧</span>
+                    <div><strong>Low Moisture → Irrigate</strong><span>Triggered 3x today</span></div>
+                    <span class="flow-badge on">ON</span>
+                  </div>
+                  <div class="flow-item">
+                    <span class="flow-icon">🌡️</span>
+                    <div><strong>Heat Stress Alert</strong><span>Threshold: 38°C</span></div>
+                    <span class="flow-badge on">ON</span>
+                  </div>
+                  <div class="flow-item">
+                    <span class="flow-icon">🐛</span>
+                    <div><strong>Pest Detection → Notify</strong><span>Last: 2 days ago</span></div>
+                    <span class="flow-badge off">OFF</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="3">
+            <div class="tab-info">
+              <h3>Deep Analytics Dashboard</h3>
+              <p>Every metric. Every trend. Every comparison. FarmAxis transforms raw sensor data into boardroom-ready reports and real-time operational dashboards.</p>
+              <ul class="feature-list">
+                <li>✦ Season-over-season comparisons</li>
+                <li>✦ Cost-per-acre breakdowns</li>
+                <li>✦ Carbon credit tracking</li>
+                <li>✦ Exportable PDF/CSV reports</li>
+              </ul>
+            </div>
+            <div class="tab-visual">
+              <div class="visual-card">
+                <div class="vc-header">
+                  <span class="vc-dot red"></span><span class="vc-dot yellow"></span><span class="vc-dot green"></span>
+                  <span class="vc-title">Season Analytics — 2026</span>
+                </div>
+                <div class="analytics-bars">
+                  <div class="abar-row"><span>Wheat</span><div class="abar"><div class="abar-fill" style="width:82%"></div></div><span>82%</span></div>
+                  <div class="abar-row"><span>Cotton</span><div class="abar"><div class="abar-fill" style="width:67%"></div></div><span>67%</span></div>
+                  <div class="abar-row"><span>Maize</span><div class="abar"><div class="abar-fill" style="width:91%"></div></div><span>91%</span></div>
+                  <div class="abar-row"><span>Soybean</span><div class="abar"><div class="abar-fill" style="width:74%"></div></div><span>74%</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal-up">
+          <div class="stat-num counter" data-target="75000">0</div>
+          <div class="stat-unit">Acres</div>
+          <div class="stat-label">Optimized & Monitored</div>
+        </div>
+        <div class="stat-item reveal-up">
+          <div class="stat-num counter" data-target="15000">0</div>
+          <div class="stat-unit">Farmers</div>
+          <div class="stat-label">Empowered Globally</div>
+        </div>
+        <div class="stat-item reveal-up">
+          <div class="stat-num"><span class="counter" data-target="38">0</span>%</div>
+          <div class="stat-unit">Average</div>
+          <div class="stat-label">Yield Improvement</div>
+        </div>
+        <div class="stat-item reveal-up">
+          <div class="stat-num"><span class="counter" data-target="41">0</span>%</div>
+          <div class="stat-unit">Reduction</div>
+          <div class="stat-label">Water Consumption</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-label reveal-up">⬡ Solutions</div>
+      <h2 class="section-title centered reveal-up">Everything your farm needs.<br /><em>Nothing it doesn't.</em></h2>
+      <div class="services-grid">
+        <div class="service-card large reveal-up">
+          <div class="sc-icon">🛰️</div>
+          <h3>Satellite Intelligence</h3>
+          <p>Daily multispectral imagery from 3m resolution satellites. See what your eyes can't — at scale.</p>
+          <div class="sc-tag">NDVI · EVI · NDWI</div>
+        </div>
+        <div class="service-card reveal-up">
+          <div class="sc-icon">🧠</div>
+          <h3>AI Crop Advisor</h3>
+          <p>A personalized AI agronomist available 24/7, trained on your specific crop, soil, and climate data.</p>
+        </div>
+        <div class="service-card reveal-up">
+          <div class="sc-icon">💧</div>
+          <h3>Smart Irrigation</h3>
+          <p>Precision water delivery based on real soil moisture, ET rates, and weather forecasts.</p>
+        </div>
+        <div class="service-card reveal-up">
+          <div class="sc-icon">🌿</div>
+          <h3>Soil Intelligence</h3>
+          <p>Continuous NPK monitoring, pH tracking, and fertility mapping across every field zone.</p>
+        </div>
+        <div class="service-card large reveal-up">
+          <div class="sc-icon">📊</div>
+          <h3>Carbon & Compliance</h3>
+          <p>Automatically track, verify, and sell your farm's carbon credits through our integrated marketplace. Turn sustainability into revenue.</p>
+          <div class="sc-tag">VCM Verified · Blockchain Ledger</div>
+        </div>
+        <div class="service-card reveal-up">
+          <div class="sc-icon">🐄</div>
+          <h3>Livestock Tracking</h3>
+          <p>GPS + biometric tags with AI health scoring for every animal on your farm.</p>
+        </div>
+        <div class="service-card reveal-up">
+          <div class="sc-icon">⚡</div>
+          <h3>Equipment AI</h3>
+          <p>Predictive maintenance alerts before breakdowns happen — reducing downtime by 60%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CASE STUDIES ===== -->
+  <section class="cases-section" id="cases">
+    <div class="container">
+      <div class="section-label reveal-up">⬡ Case Studies</div>
+      <h2 class="section-title centered reveal-up">Proof that lives<br /><em>in the numbers</em></h2>
+      <div class="cases-grid">
+        <div class="case-card reveal-up">
+          <div class="case-flag">🇵🇰 Punjab, Pakistan</div>
+          <div class="case-metric">+42%</div>
+          <h3>Wheat Yield Increase</h3>
+          <p>A 4,200-acre wheat cooperative integrated FarmAxis soil sensors and irrigation automation, resulting in record harvests two seasons running.</p>
+          <div class="case-tags"><span>Irrigation AI</span><span>Soil Sensors</span></div>
+        </div>
+        <div class="case-card featured reveal-up">
+          <div class="case-flag">🇺🇸 Iowa, USA</div>
+          <div class="case-metric">$2.1M</div>
+          <h3>Annual Cost Savings</h3>
+          <p>A 12,000-acre soybean & corn operation reduced input costs through precision fertilization, cutting spend on chemicals by 31% while increasing output.</p>
+          <div class="case-tags"><span>Precision Ag</span><span>Analytics</span><span>AI Advisor</span></div>
+        </div>
+        <div class="case-card reveal-up">
+          <div class="case-flag">🇿🇦 KwaZulu-Natal, SA</div>
+          <div class="case-metric">–58%</div>
+          <h3>Crop Loss from Disease</h3>
+          <p>Early disease detection using thermal imaging and AI pattern recognition slashed annual crop losses on a sugar cane estate.</p>
+          <div class="case-tags"><span>Satellite</span><span>Disease AI</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-label reveal-up">⬡ Testimonials</div>
+      <div class="testi-grid">
+        <div class="testi-card reveal-up">
+          <div class="testi-stars">★★★★★</div>
+          <p>"FarmAxis paid for itself in the first harvest. The yield prediction alone helped us negotiate better futures contracts."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg,#6ee7b7,#22c55e)">AR</div>
+            <div><strong>Ahmed Raza</strong><span>Farm Director, Punjab Agricultural Co-op</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal-up">
+          <div class="testi-stars">★★★★★</div>
+          <p>"I was skeptical about 'smart farming' tech. After one season with FarmAxis, I convinced three of my neighbors to switch."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg,#93c5fd,#3b82f6)">JW</div>
+            <div><strong>James Wilkerson</strong><span>Independent Farmer, Iowa</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal-up">
+          <div class="testi-stars">★★★★★</div>
+          <p>"The carbon credit feature alone generated $180K in new revenue last year. That's real money for doing the right thing."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg,#fde68a,#f59e0b)">LN</div>
+            <div><strong>Lindiwe Nkosi</strong><span>Sustainability Lead, AgriSA Estate</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-label reveal-up">⬡ Pricing</div>
+      <h2 class="section-title centered reveal-up">Simple, transparent pricing.<br /><em>Scales with your farm.</em></h2>
+      <div class="pricing-grid">
+        <div class="price-card reveal-up">
+          <div class="pc-tier">Starter</div>
+          <div class="pc-price">$199<span>/mo</span></div>
+          <div class="pc-desc">For small farms up to 500 acres</div>
+          <ul class="pc-features">
+            <li>✓ Satellite monitoring</li>
+            <li>✓ Basic AI advisor (20 queries/mo)</li>
+            <li>✓ 5 sensor integrations</li>
+            <li>✓ Email alerts</li>
+          </ul>
+          <a href="#contact" class="pc-btn ghost">Get Started</a>
+        </div>
+        <div class="price-card featured reveal-up">
+          <div class="pc-badge">Most Popular</div>
+          <div class="pc-tier">Professional</div>
+          <div class="pc-price">$699<span>/mo</span></div>
+          <div class="pc-desc">For growing farms up to 5,000 acres</div>
+          <ul class="pc-features">
+            <li>✓ Everything in Starter</li>
+            <li>✓ Unlimited AI advisor</li>
+            <li>✓ Predictive yield modeling</li>
+            <li>✓ Smart irrigation automation</li>
+            <li>✓ Carbon credit tracking</li>
+            <li>✓ Priority support</li>
+          </ul>
+          <a href="#contact" class="pc-btn primary">Get Started</a>
+        </div>
+        <div class="price-card reveal-up">
+          <div class="pc-tier">Enterprise</div>
+          <div class="pc-price">Custom</div>
+          <div class="pc-desc">For large operations & cooperatives</div>
+          <ul class="pc-features">
+            <li>✓ Everything in Professional</li>
+            <li>✓ Dedicated account manager</li>
+            <li>✓ Custom AI model training</li>
+            <li>✓ White-label options</li>
+            <li>✓ SLA guarantee (99.9%)</li>
+          </ul>
+          <a href="#contact" class="pc-btn ghost">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="cta-inner reveal-up">
+      <div class="cta-glow"></div>
+      <div class="section-label">⬡ Get Started</div>
+      <h2>The future of your farm<br /><em>starts today</em></h2>
+      <p>Join 15,000+ farmers already using FarmAxis to grow smarter, use less, and earn more.</p>
+      <a href="#contact" class="btn-primary large">Start Your Free Trial →</a>
+      <div class="cta-trust">No credit card required · 30-day free trial · Cancel anytime</div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal-up">
+          <div class="section-label">⬡ Contact</div>
+          <h2 class="section-title">Let's grow<br /><em>together</em></h2>
+          <p>Whether you're a small family farm or a 50,000-acre enterprise, our team will craft a solution that fits your exact operation.</p>
+          <div class="contact-details">
+            <div class="cd-item">
+              <span class="cd-icon">📍</span>
+              <span>Silicon Valley, CA · Karachi, PK · Amsterdam, NL</span>
+            </div>
+            <div class="cd-item">
+              <span class="cd-icon">✉️</span>
+              <span>hello@farmaxis.ai</span>
+            </div>
+            <div class="cd-item">
+              <span class="cd-icon">📞</span>
+              <span>+1 (800) FARMAXIS</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right reveal-up">
+          <div class="contact-form-wrap">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Ahmad Khan" />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="you@farm.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Farm Size</label>
+              <select>
+                <option>Under 100 acres</option>
+                <option>100 – 500 acres</option>
+                <option>500 – 5,000 acres</option>
+                <option>5,000+ acres</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="4" placeholder="Tell us about your farm and goals..."></textarea>
+            </div>
+            <button class="submit-btn" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo"><span class="logo-mark">⬡</span> FarmAxis</div>
+          <p>Intelligent agriculture for a world that needs to do more with less.</p>
+          <div class="footer-social">
+            <a href="#">𝕏</a>
+            <a href="#">in</a>
+            <a href="#">▶</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="fl-col">
+            <h4>Platform</h4>
+            <a href="#">Monitoring</a>
+            <a href="#">Prediction</a>
+            <a href="#">Automation</a>
+            <a href="#">Analytics</a>
+          </div>
+          <div class="fl-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+            <a href="#">Blog</a>
+          </div>
+          <div class="fl-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 FarmAxis, Inc. All rights reserved.</span>
+        <span>Built for the future of food.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
